@@ -1,0 +1,164 @@
+<!--\n  Modulo – minimalist responsive single‑page site\n  Replace placeholder text and image sources with real content.\n-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modulo – 3D‑Printed Kits</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f0f0f;
+      --accent: #2563eb; /* indigo‑600 */
+      --light: #f3f4f6;  /* gray‑100 */
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* header */
+    header { position: fixed; top: 0; left: 0; width: 100%; background: var(--bg); border-bottom: 1px solid var(--light); z-index: 100; }
+    .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .brand { font-weight: 700; letter-spacing: .05em; font-size: 1.25rem; }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav li { font-size: 0.9rem; text-transform: uppercase; opacity: .8; }
+    nav li:hover { opacity: 1; }
+
+    /* hero */
+    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 7rem 0 4rem; text-align: center; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+    .hero p { max-width: 640px; opacity: .8; margin-bottom: 2rem; }
+    .btn { padding: .75rem 1.5rem; background: var(--accent); color: #fff; border: none; border-radius: .5rem; font-weight: 600; cursor: pointer; transition: background .2s; }
+    .btn:hover { background: #1d4ed8; }
+
+    /* kits */
+    .kits { padding: 4rem 0; }
+    .kits h2 { font-size: 2rem; margin-bottom: 2.5rem; text-align: center; }
+    .kit-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); }
+    .kit { border: 1px solid var(--light); border-radius: 1rem; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fafafa; }
+    .kit img { width: 100%; height: 170px; object-fit: cover; border-radius: .75rem; margin-bottom: 1rem; background: var(--light); }
+    .kit h3 { margin-bottom: .5rem; font-size: 1.1rem; }
+    .kit p { font-size: .9rem; opacity: .8; margin-bottom: 1rem; }
+
+    /* gallery */
+    .gallery { padding: 4rem 0; }
+    .gallery h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .gallery-grid { column-count: 3; column-gap: 1rem; }
+    .gallery-grid img { width: 100%; margin-bottom: 1rem; border-radius: .75rem; break-inside: avoid; background: var(--light); }
+
+    /* contact */
+    .contact { padding: 4rem 0 6rem; }
+    .contact h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; }
+    form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; }
+    input, textarea, select { width: 100%; padding: .75rem 1rem; border-radius: .5rem; border: 1px solid var(--light); font: inherit; }
+    textarea { resize: vertical; min-height: 120px; }
+
+    /* footer */
+    footer { text-align: center; padding: 2rem 0; font-size: .85rem; opacity: .6; }
+
+    /* responsive tweaks */
+    @media (max-width: 600px) {
+      nav ul { gap: .75rem; font-size: .8rem; }
+      .gallery-grid { column-count: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+  <img src="logo.png" alt="Modulo logo" style="height: 40px;" />
+</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#kits">Kits</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero container">
+    <h1>Smart 3D‑Printed Kits for Everyday Life</h1>
+    <p>Modulo designs and prints minimalist accessories that declutter desks, level‑up gaming setups, and make daily tasks easier. Modular, functional, and made on demand.</p>
+    <a class="btn" href="#kits">Browse Kits</a>
+  </section>
+
+  <!-- Kits -->
+  <section id="kits" class="kits container">
+    <h2>Our Kits</h2>
+    <!-- Optional kit filter buttons would go here. -->
+    <div class="kit-grid">
+      <!-- Kit Card Example -->
+      <div class="kit">
+        <img src="https://via.placeholder.com/400x300?text=Everyday+Kit" alt="Everyday Utility Kit placeholder" />
+        <h3>Everyday Utility Kit</h3>
+        <p>5 functional prints that solve small daily annoyances around your home or dorm.</p>
+      </div>
+      <div class="kit">
+        <img src="https://via.placeholder.com/400x300?text=Gaming+Kit" alt="Gaming Desk Kit placeholder" />
+        <h3>Gaming Desk Kit</h3>
+        <p>Controller mounts, headphone hook, and cable guides to keep your setup epic and tidy.</p>
+      </div>
+      <div class="kit">
+        <img src="https://via.placeholder.com/400x300?text=Study+Kit" alt="Study Desk Kit placeholder" />
+        <h3>Study Desk Kit</h3>
+        <p>Book holder, phone stand, and pen sleeve for a focused, organised workspace.</p>
+      </div>
+      <!-- Duplicate card structure for more kits -->
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery container">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <!-- Replace placeholder images with your own photos -->
+      <img src="https://via.placeholder.com/600x800?text=Print+Process" alt="Behind the scenes: printing" />
+      <img src="https://via.placeholder.com/600x600?text=Kit+Flatlay" alt="Modulo kit flatlay" />
+      <img src="https://via.placeholder.com/600x900?text=In+Use" alt="Product in use" />
+      <!-- Add more <img> tags as needed -->
+    </div>
+  </section>
+
+  <!-- Contact / Order -->
+  <section id="contact" class="contact container">
+    <h2>Order or Enquire</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Replace Formspree ID or use another service -->
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <select name="kit">
+        <option value="Everyday Utility Kit">Everyday Utility Kit</option>
+        <option value="Gaming Desk Kit">Gaming Desk Kit</option>
+        <option value="Study Desk Kit">Study Desk Kit</option>
+        <option value="Gift Mini Kit">Gift Mini Kit</option>
+        <option value="Kitchen Utility Kit">Kitchen Utility Kit</option>
+      </select>
+      <textarea name="message" placeholder="Questions, colour preferences, or custom requests..."></textarea>
+      <button class="btn" type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> Modulo — Designed & 3D‑Printed in the UK
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Kit Filter (Optional):
+       If you’d like buttons to filter kits by category, add buttons with data-category attributes
+       and toggle .kit elements based on matching data-category.  
+       Contact me if you need JS for that :-) */
+  </script>
+</body>
+</html>
